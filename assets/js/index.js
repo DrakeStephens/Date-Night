@@ -6,13 +6,14 @@
   // });
 function login(){
   
-    var pwd = document.getElementById("pwd");
-    var eml = document.getElementById("email") 
-    if (eml.val() === "") {
-        $("#login-error").removeClass("hide")
+    var pwd = document.getElementById("pwd").value;
+    var eml = document.getElementById("email").value; 
+    var signInError = document.getElementById("login-error");
+    if (eml === "") {
+        signInError.classList.remove("hide")
     }
-    else if (pwd.val() === "") {
-        $("#login-error").removeClass("hide")
+    else if (pwd === "") {
+        signInError.classList.remove("hide")
     }
 }
   
