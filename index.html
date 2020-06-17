@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Date Night</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script src="assets/js/index.js"></script>
+     <!-- two lines below include less CSS framework -->
+    <link rel="stylesheet/less" type="text/css" href="assets/css/style.less" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js" ></script>
 </head>
 <body>
     <header>
@@ -13,11 +15,10 @@
     </header>
     <main>
         <div>
-            <form>
                 <label for="movie-title">Movie Title:</label>    
                 <input name="movie-title" id="movie-title" type="text"/>
                 <label for="rating">Rating:</label>
-                <select name="rating">
+                <select name="rating" id="movie-rating">
                     <option>
                         Select One
                     </option>
@@ -32,11 +33,9 @@
                     </option>
 
                 </select>
-                                    <!--
-                        Genres
-                        
-                    -->
-            </form>
+
+                <button onclick="searchForMovies()">Submit</button>
+
             <main>
                 <!--Search Results Go Here-->
                 <div id="movie-result-container">
