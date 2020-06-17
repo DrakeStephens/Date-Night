@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Date Night</title>
-    <script src="assets/js/index.js"></script>
      <!-- two lines below include less CSS framework -->
     <link rel="stylesheet/less" type="text/css" href="assets/css/style.less" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js" ></script>
 </head>
 <body>
     <header>
-        
+        <h1>Date Night</h1>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email">
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd">
+        <button onclick="login()">Submit</button>
+        <p id="login-error" class = "hide"> *login error </p>
     </header>
     <main>
         <div>
@@ -50,5 +54,31 @@
     <footer>
 
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js" ></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCOMc2iFrRp066vQ37ao1eH4Y6l906OQvc",
+            authDomain: "date-night-a1794.firebaseapp.com",
+            databaseURL: "https://date-night-a1794.firebaseio.com",
+            projectId: "date-night-a1794",
+            storageBucket: "date-night-a1794.appspot.com",
+            messagingSenderId: "660670689852",
+            appId: "1:660670689852:web:29310f184a13b819994939",
+            measurementId: "G-SS0WW2VWJ0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+        <script src="assets/js/index.js"></script>
 </body>
 </html>
