@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Date Night</title>
-     <!-- two lines below include less CSS framework -->
+    <!-- two lines below include less CSS framework -->
     <link rel="stylesheet/less" type="text/css" href="assets/css/style.less" />
 </head>
+
 <body>
     <header>
         <h1>Date Night</h1>
@@ -15,36 +17,33 @@
         <label for="pwd">Password:</label>
         <input type="password" id="pwd" name="pwd">
         <button onclick="login()">Submit</button>
-        <p id="login-error" class = "hide"> *login error </p>
+        <p id="login-error" class="hide"> *login error </p>
     </header>
     <main>
         <div>
-                <label for="movie-title">Movie Title:</label>    
-                <input name="movie-title" id="movie-title" type="text"/>
-                <label for="rating">Rating:</label>
-                <select name="rating" id="movie-rating">
-                    <option>
-                        Select One
-                    </option>
-                    <option value="r">
-                        R
-                    </option>
-                    <option value="pg-13">
-                        PG-13
-                    </option>
-                    <option value="G">
-                        PG
-                    </option>
-
-                </select>
-
-                <button onclick="searchForMovies()">Submit</button>
+            <label for="movie-title">Movie Title:</label>
+            <input name="movie-title" id="movie-title" type="text" />
+            <label for="rating">Rating:</label>
+            <select name="rating" id="movie-rating">
+                <option>
+                    Select One
+                </option>
+                <option value="r">
+                    R
+                </option>
+                <option value="pg-13">
+                    PG-13
+                </option>
+                <option value="G">
+                    PG
+                </option>
+            </select>
+            <button onclick="searchForMovies()">Submit</button>
+            <p id="displayError" class="hide">Please fill out the title field before submitting</p>
 
             <main>
                 <!--Search Results Go Here-->
-                <div id="movie-result-container">
-                    
-                </div>
+                <div id="movie-result-container"></div>
             </main>
         </div>
         <div>
@@ -54,15 +53,15 @@
     <footer>
 
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js" ></script>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
 
-        <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
 
-        <script>
+    <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyCOMc2iFrRp066vQ37ao1eH4Y6l906OQvc",
@@ -77,8 +76,9 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        </script>
-        <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
-        <script src="assets/js/index.js"></script>
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
+
 </html>

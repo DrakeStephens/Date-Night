@@ -37,12 +37,11 @@ function login(){
   });
 
 function searchForMovies() {
+    
     const title = document.getElementById('movie-title').value;
 
-    if (title == "") {
-        displayError("Please fill out the title field before submitting");
-        return;
-    }
+    
+    
 
     const Http = new XMLHttpRequest();
     const url = `https://www.omdbapi.com/?s=${title}&apikey=27761297`;
@@ -92,8 +91,24 @@ function displayMovies(moviesArray) {
 }
 
 function displayError(errorMessage) {
+    var movieTitle = document.getElementById("movie-title").value;
+    var movieRating = document.getElementById("movie-rating").value;
+    var displayError = document.getElementById("Please fill out the title field before submitting");
+
+    if (movieTitle === "") {
+        displayError.classList.remove("hide")
+    }
+    else if (movieRating === ""){
+        displayError.classList.remove("hide")
+    }
     /*TODO Replace this alert with a Modal and keep the error message (part of requirements is use Modal instead of alert)*/
-    alert(errorMessage);
+    //alert(errorMessage);
+    // if (title === "") {
+    //     apiResponse.Error.remove("hide")
+    // }
+    // else if (title === "") {
+    //     apiResponse.Search.remove("hide")
+    // }
 }
 
 
