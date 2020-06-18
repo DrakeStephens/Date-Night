@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Date Night</title>
      <!-- two lines below include less CSS framework -->
+     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet/less" type="text/css" href="assets/css/style.less" />
 </head>
 <body>
@@ -19,10 +20,10 @@
         <p id="login-error" class = "hide"> *login error </p>
         <p id="signout-error" class = "hide"> *signout error </p>
         <button onclick ="signOut()" id="signout-btn" class = "hide"> SignOut </button>
-        
     </header>
     <main>
         <div>
+                <div id="movie-search">
                 <h2></h2>
                 <label for="movie-title">Movie Title:</label>    
                 <input name="movie-title" id="movie-title" type="text"/>
@@ -44,7 +45,10 @@
                 </select>
 
                 <button onclick="searchForMovies()">Submit</button>
-
+                </div>
+                <div id="favsList">
+                    <h2>Your Favorites ⭐</h2>
+                </div>
             <main>
                 <!--Search Results Go Here-->
                 <div id="movie-result-container">

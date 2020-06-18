@@ -66,7 +66,7 @@
          caButton.classList.add("hide")
          logButton.classList.add("hide")
          soButton.classList.remove("hide")
-         currentEml.textContent = "Email:" + email
+         currentEml.textContent = "Email: " + email
          if(user === null){
             console.log("testing")
             var signInError = document.getElementById("login-error");
@@ -102,8 +102,8 @@ firebase.auth().signOut().then(function() {
   });
 
 }
- function searchForMovies() {
-     const title = document.getElementById('movie-title').value;
+ function searchForMovies() { 
+    const title = document.getElementById('movie-title').value;
 
      if (title == "") {
          displayError("Please fill out the title field before submitting");
@@ -126,11 +126,12 @@ firebase.auth().signOut().then(function() {
              } else {
                  displayMovies(apiResponse.Search);
              }
+             console.log("hi")
          }
      }
  }
 
- function displayMovies(moviesArray) {
+ function displayMovies(moviesArray) { 
      const movieContainer = document.getElementById('movie-result-container');
 
      movieContainer.innerHTML = "";
@@ -139,7 +140,7 @@ firebase.auth().signOut().then(function() {
          movieTitleAndYear.innerText = `${moviesArray[i].Title} (${moviesArray[i].Type} released ${moviesArray[i].Year})`
 
          const favoriteButton = document.createElement("button");
-         favoriteButton.innerText = "Add to favorites"
+         favoriteButton.innerText = "Add to favorites⭐"
          favoriteButton.onclick = function () {
              addMovieToFavorites(moviesArray[i])
          };
@@ -155,6 +156,7 @@ firebase.auth().signOut().then(function() {
              movieResult.append(movieImage);
          }
          movieResult.append(favoriteButton);
+         console.log("dude")
      }
  }
 
@@ -166,12 +168,13 @@ firebase.auth().signOut().then(function() {
 
  window.onload = function () {
      /*loop through local storage to display favorite movies*/
+     var favsList = document.getElementById("favsList")
      for (let i = 0; i < localStorage.length; i++) {
          if (localStorage.getItem(localStorage
                  .key(i)) == "favorite") {
              const favoriteDiv = document.createElement("div");
              favoriteDiv.innerText = localStorage.key(i);
-             document.body.append(favoriteDiv)
+             favsList.append(favoriteDiv)
          }
      }
      /*add Enter key event listener for movie title input*/
