@@ -102,12 +102,17 @@ firebase.auth().signOut().then(function() {
   });
 
 }
- function searchForMovies() { 
-    const title = document.getElementById('movie-title').value;
-
+ function searchForMovies() {
+     const title = document.getElementById('movie-title').value;
+     var displayError = document.getElementById("displayError");
+     var wrongInput = document.getElementById("wrongInput");
+     displayError.classList.add("hide")
+     wrongInput.classList.add("hide")
      if (title == "") {
-         displayError("Please fill out the title field before submitting");
-         return;
+        console.log("testing")
+        displayError.classList.remove("hide")
+        //  displayError("Please fill out the title field before submitting");
+        //  return;
      }
 
      const Http = new XMLHttpRequest();
@@ -119,9 +124,8 @@ firebase.auth().signOut().then(function() {
          if (Http.readyState == 4) { //Ready state 4 means operation is complete for XMLHttpRequest
              const apiResponse = JSON.parse(Http.responseText)
              console.log(apiResponse)
-
              if (apiResponse.Error) {
-                 displayError(apiResponse.Error)
+                 wrongInput.classList.remove("hide")
                  return;
              } else {
                  displayMovies(apiResponse.Search);
@@ -160,10 +164,13 @@ firebase.auth().signOut().then(function() {
      }
  }
 
- function displayError(errorMessage) {
-     /*TODO Replace this alert with a Modal and keep the error message (part of requirements is use Modal instead of alert)*/
-     alert(errorMessage);
- }
+//  function displayError(errorMessage) {
+//     if(movie-title === null){
+//         console.log("testing")
+//         var displayError = document.getElementById("Please fill out the title field before submitting");
+//         displayError.classList.remove("hide")
+//         }
+//  }
 
 
  window.onload = function () {
