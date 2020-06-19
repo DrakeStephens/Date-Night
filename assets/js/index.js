@@ -101,23 +101,19 @@ firebase.auth().signOut().then(function() {
     signOutError.classList.remove("hide")
   });
 
-<<<<<<< HEAD
-function searchForMovies() {
-    
-    const title = document.getElementById('movie-title').value;
-
-    
-    
-=======
 }
  function searchForMovies() {
      const title = document.getElementById('movie-title').value;
-
+     var displayError = document.getElementById("displayError");
+     var wrongInput = document.getElementById("wrongInput");
+     displayError.classList.add("hide")
+     wrongInput.classList.add("hide")
      if (title == "") {
-         displayError("Please fill out the title field before submitting");
-         return;
+        console.log("testing")
+        displayError.classList.remove("hide")
+        //  displayError("Please fill out the title field before submitting");
+        //  return;
      }
->>>>>>> c90749b2cba420910951c179449c895940e4a09c
 
      const Http = new XMLHttpRequest();
      const url = `https://www.omdbapi.com/?s=${title}&apikey=27761297`;
@@ -128,9 +124,8 @@ function searchForMovies() {
          if (Http.readyState == 4) { //Ready state 4 means operation is complete for XMLHttpRequest
              const apiResponse = JSON.parse(Http.responseText)
              console.log(apiResponse)
-
              if (apiResponse.Error) {
-                 displayError(apiResponse.Error)
+                 wrongInput.classList.remove("hide")
                  return;
              } else {
                  displayMovies(apiResponse.Search);
@@ -142,33 +137,10 @@ function searchForMovies() {
  function displayMovies(moviesArray) {
      const movieContainer = document.getElementById('movie-result-container');
 
-<<<<<<< HEAD
-function displayError(errorMessage) {
-    var movieTitle = document.getElementById("movie-title").value;
-    var movieRating = document.getElementById("movie-rating").value;
-    var displayError = document.getElementById("Please fill out the title field before submitting");
-
-    if (movieTitle === "") {
-        displayError.classList.remove("hide")
-    }
-    else if (movieRating === ""){
-        displayError.classList.remove("hide")
-    }
-    /*TODO Replace this alert with a Modal and keep the error message (part of requirements is use Modal instead of alert)*/
-    //alert(errorMessage);
-    // if (title === "") {
-    //     apiResponse.Error.remove("hide")
-    // }
-    // else if (title === "") {
-    //     apiResponse.Search.remove("hide")
-    // }
-}
-=======
      movieContainer.innerHTML = "";
      for (let i = 0; i < moviesArray.length; i++) {
          const movieTitleAndYear = document.createElement('div');
          movieTitleAndYear.innerText = `${moviesArray[i].Title} (${moviesArray[i].Type} released ${moviesArray[i].Year})`
->>>>>>> c90749b2cba420910951c179449c895940e4a09c
 
          const favoriteButton = document.createElement("button");
          favoriteButton.innerText = "Add to favorites"
@@ -190,10 +162,13 @@ function displayError(errorMessage) {
      }
  }
 
- function displayError(errorMessage) {
-     /*TODO Replace this alert with a Modal and keep the error message (part of requirements is use Modal instead of alert)*/
-     alert(errorMessage);
- }
+//  function displayError(errorMessage) {
+//     if(movie-title === null){
+//         console.log("testing")
+//         var displayError = document.getElementById("Please fill out the title field before submitting");
+//         displayError.classList.remove("hide")
+//         }
+//  }
 
 
  window.onload = function () {

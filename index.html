@@ -13,35 +13,9 @@
     <header>
         <h1>Date Night</h1>
         <label for="email" id="eml">Email:</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" required>
         <label for="pwd" id="pwdlbl">Password:</label>
-        <input type="password" id="pwd" name="pwd">
-<<<<<<< HEAD
-        <button onclick="login()">Submit</button>
-        <p id="login-error" class="hide"> *login error </p>
-    </header>
-    <main>
-        <div>
-            <label for="movie-title">Movie Title:</label>
-            <input name="movie-title" id="movie-title" type="text" />
-            <label for="rating">Rating:</label>
-            <select name="rating" id="movie-rating">
-                <option>
-                    Select One
-                </option>
-                <option value="r">
-                    R
-                </option>
-                <option value="pg-13">
-                    PG-13
-                </option>
-                <option value="G">
-                    PG
-                </option>
-            </select>
-            <button onclick="searchForMovies()">Submit</button>
-            <p id="displayError" class="hide">Please fill out the title field before submitting</p>
-=======
+        <input type="password" id="pwd" name="pwd" required>
         <button onclick="signup()" id ="ca-button" >Create An Account</button>
         <button onclick="login()" id ="login-button">Login</button>
         <p id="login-error" class = "hide"> *login error </p>
@@ -53,7 +27,7 @@
         <div>
                 <h2></h2>
                 <label for="movie-title">Movie Title:</label>    
-                <input name="movie-title" id="movie-title" type="text"/>
+                <input name="movie-title" id="movie-title" type="text"required>
                 <label for="rating">Rating:</label>
                 <select name="rating" id="movie-rating">
                     <option>
@@ -72,11 +46,12 @@
                 </select>
 
                 <button onclick="searchForMovies()">Submit</button>
->>>>>>> c90749b2cba420910951c179449c895940e4a09c
-
+                
             <main>
                 <!--Search Results Go Here-->
                 <div id="movie-result-container"></div>
+                <p id="displayError" class="hide">Please fill out the title field before submitting</p>
+                <p id="wrongInput" class="hide">Something Went wrong</p>
             </main>
         </div>
         <div>
